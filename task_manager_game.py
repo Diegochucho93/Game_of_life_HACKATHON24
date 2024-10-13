@@ -47,7 +47,7 @@ class Game:
         )
 
     def show_intro(self):
-        st.markdown("<h2 style='color: white;'>Welcome to LifeQuest: The Chore Adventure!</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='color: white;'></h2>", unsafe_allow_html=True)
 
     def add_task_ui(self):
         st.subheader("Add a Task")

@@ -51,11 +51,18 @@ def set_png_as_page_bg(png_file1,png_file2):
         src: url('fonts/Cageroll-Cage.otf') format('opentype');
     }
 
-    h2 {
-        font-family: 'Kilby', sans-serif;
-    }
-
-
+    h1 {{
+        font-family: 'Protomo';
+        text-align: center;
+        color: white; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }}
+    h2 {{
+        font-family: 'KILBY', sans-serif;
+        color: white; 
+        text-align: center;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }}
     
     </style>
     ''' % (bin_str1, bin_str2)  # Pass both base64 strings
@@ -67,7 +74,7 @@ def set_png_as_page_bg(png_file1,png_file2):
 set_png_as_page_bg("IMG/Life_Quest.png", "IMG/Indieground_Holographic_Textures_01.jpg")
 
 
-st.title("LifeQuest: The Chore Adventure")
+st.title("GAME OF LIFE")
 
 st.markdown("<div id='home' style></div>", unsafe_allow_html=True)  # Anchor for "Home" link
 # Create three columns
@@ -77,7 +84,7 @@ left_column, middle_column, right_column = st.columns(3)
 
 # --- Left Column: Calendar/Cyborg ---
 with left_column:
-    st.header("Calendar/Cyborg")
+    st.header("Calendar")
     # Placeholder for the calendar or cyborg animation
     show_calendar()
 
@@ -95,5 +102,10 @@ with right_column:  # Assuming you have 'right_column' defined from st.columns
     st.write("Level:", player.level)
 st.markdown('</div>', unsafe_allow_html=True)
 
-with open('./CSS/style.css') as f:
-    css
+# Load CSS from file
+try:
+    with open('./CSS/style.css') as f:
+        css = f.read()
+    st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+except FileNotFoundError:
+    st.warning("CSS file not found. Please check the path.")
