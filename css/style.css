@@ -1,0 +1,56 @@
+
+
+
+
+@keyframes scrollDiagonalRows {
+  0% { background-position: 0 0, center; }
+  25% { background-position: 50px 50px, center; }
+  50% { background-position: 100px 100px, center; }
+  75% { background-position: 50px 150px, center; }
+  100% { background-position: 0 200px, center; } 
+}
+
+[data-testid="stHorizontalBlock"] {
+  background-color: #FF69B4;
+  border: 2px solid #FF00FF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  padding: 20px;
+  animation: pulse 6s infinite;
+  width: auto;
+} 
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+  100% {
+    transform: scale(1);  
+
+  }
+  
+}
+
+
+  h1 {
+    font-family: 'Protomo';
+     /* Make all h1 headings red */
+    text-align: center; /* Center align all h1 headings */
+  }
+  h2 {
+    font-family: 'KILBY', sans-serif;
+    color: blue; /* Make all h1 headings red */
+    text-align: center; /* Center align all h1 headings */
+  }
+  .stButton > button { 
+    background-color: green !important; /* Make all Streamlit buttons green */
+    border: none !important; 
+  }
+
+
+.left-column, .middle-column, .right-column {
+    padding: 10px;
+}
